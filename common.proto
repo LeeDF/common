@@ -1,0 +1,100 @@
+syntax = "proto3";
+option go_package = "rpc";
+package common;
+
+enum EnumCommonCodes {
+    Fail = 0;
+    Success = 1;
+    MysqlErr = 2;
+    ParamErr = 3;
+    DaoNotFound = 4;
+    DaoUpdateFail = 5;
+    DaoRecordExist = 6;
+    DaoSaveFail = 7;
+    DaoDeleteFail = 8;
+    DaoErr = 9;
+
+    //userService
+    NicknameErr = 100001;
+    UserNameErr = 100002;
+    FeedbackErr = 100003;
+    CheckUserErr = 100004;
+
+
+    //verifyCodeService;
+    CheckCodeErr = 200001;
+    SendCodeErr = 200002;
+
+    //pushService
+    PushServiceErr = 300001;
+}
+
+enum EnumUserId {
+    Rid = 0;
+    Uqid = 1;
+    Aid = 2;
+}
+
+enum EnumYN {
+    N = 0;
+    Y = 1;
+}
+
+enum EnumOnlineStatus {
+    Unknown = 0;
+    Up = 1;
+    Down = 2;
+}
+
+enum EnumCommonSign {
+    Zero = 0;
+    Chid = 1;
+    Subchid = 2;
+    ApiLevel = 3;
+    Model = 4;
+    ABtest = 5;
+    ApkVCode = 6;
+    VipFlag = 7;
+    VMVCode = 8;
+    MainJarVCode = 9;
+    Brand = 10;
+    TargetSdkVCode = 11;
+
+}
+
+message CommonResponse {
+    int32 code = 1;
+    string msg = 2;
+}
+
+message CommonIn {
+    string pkgname = 1;
+    int32 chid = 2;
+    int32 subchid = 3;
+    int32 versionCode = 4;
+    string versionName = 5;
+    int32 abtest = 6;
+    string android = 7;
+    string imsi = 8;
+    string imei = 9;
+    string brand = 10;
+    string manufacturer = 11;
+    string model = 12;
+    string product = 13;
+    int32 compver = 14;
+    int32 mainver = 15;
+    int32 apiver = 16;
+    string release = 17;
+    string abi = 18;
+    int64 rid = 19;
+    int64 uid = 20;
+    string uqid = 21;
+    string cqid = 22;
+    string Ip = 23;
+    int32 productid = 24;
+}
+
+message VoidMsg {
+
+}
+
